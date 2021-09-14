@@ -159,6 +159,7 @@ p {
   }
 }
 .card .right .question .answer {
+  display: block;
   line-height: normal;
   height: 0;
   opacity: 0;
