@@ -1,6 +1,6 @@
 @mixin respond($breakpoint) {
     @if  $breakpoint == phone {
-        @media (max-width: 23.438em) { @content }; //375px
+        @media (max-width: 37.5em) { @content }; //600px
     }
 
     @if  $breakpoint == big-desktop {
