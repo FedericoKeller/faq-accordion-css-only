@@ -1,5 +1,15 @@
+@mixin respond($breakpoint) {
+    @if  $breakpoint == phone {
+        @media (max-width: 23.438em) { @content }; //375px
+    }
+
+    @if  $breakpoint == big-desktop {
+        @media (min-width: 90em) { @content };    //1440px
+    }
+}
+
 :root {
-    --color-desa-blue-dark: hsl(238, 29%, 16%);
+    --color-desa-blue-dark: hsl(237, 90%, 8%);
     --color-soft-red: hsl(14, 88%, 65%);
     --color-soft-violet: hsl(273, 75%, 66%);
     --color-soft-blue: hsl(240, 73%, 65%);
@@ -19,9 +29,21 @@
 }
 
 
+html{
+    font-size: 75%;
+
+    @include respond(big-desktop) {
+        font-size: 85%;
+    }
+
+    @include respond(phone) {
+        font-size: 65%;
+    }
+}
+
+
 body {
     font-family: "Kumbh Sans", sans-serif;
-    font-size: 75%;
     min-height: 100vh;
     display: grid;
     place-items: center;
@@ -51,19 +73,34 @@ p {
     max-width: 100%;
     width: 14em;
     height: 14em;
-    filter: drop-shadow(0 1em 1em rgba(0, 0, 0, .25))
+    filter: drop-shadow(0 1em 1em rgba(0, 0, 0, .25));
+
+    
+    @include respond(phone) {
+        transform: translate(68%, -33%);
+        width: 7em;
+        height: 7em;
+    }
 }
 
 .card {
     position: relative;
     height: 40em;
-    width: 75em;
+    width: 50vw;
     background-color: var(--color-light);
     border-radius: var(--br);
     box-shadow: 0em 2em 2em rgba(0, 0, 0, .25);
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
+
+    @include respond(phone) {
+        min-height: 70vh;
+        width: 85vw;
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+    }
 
     .left {
         display: flex;
@@ -75,20 +112,39 @@ p {
         background-size: 213%;
         background-repeat: no-repeat;
         background-position: 105% 67%;
-        
+
+        @include respond(phone) {
+            background: none;
+            transform: translate(0);
+            display: block;
+            height: 7em;
+        }
+
         img {
             max-width: 100%;
             transform: translateX(-2em);
+
+            @include respond(phone) {
+                width: 65%;
+                transform: translate(25%, -55%);
+            }
         }
     }
 
 
     .right {
         padding: 4.4em;
-        h1 {
-            font-size: 1.85rem;
-            font-weight: 700;
-            color: var(--color-desa-blue-dark);
+
+        .title {
+            h1 {
+                font-size: 3rem;
+                font-weight: 700;
+                color: var(--color-desa-blue-dark);
+            }
+    
+            @include respond(phone) {
+                text-align: center;
+            }
         }
 
         ul {
@@ -97,21 +153,21 @@ p {
         }
 
 
-        li {
-            font-size: 0.85rem;
-        }
-
         ul li {
             display: flex;
             justify-content: space-between;
         }
 
         .question {
-            transition: all 200ms;
+            
+            @include respond(big-desktop) {
+                transition: all 200ms;
 
-            &:hover {
-                color: var(--color-soft-red);
+                &:hover {
+                    color: var(--color-soft-red);
+                }
             }
+          
 
             .answer {
                 line-height: normal;
@@ -140,11 +196,11 @@ p {
         font-weight: normal;
         height: 2em;
         opacity: 1;
-        
+        margin-bottom: 2em;
+
 
         p {
             color: var(--color-dark-grayish-blue);
-            font-size: 0.75rem;
         }
     }
 

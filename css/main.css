@@ -1,5 +1,5 @@
 :root {
-  --color-desa-blue-dark: hsl(238, 29%, 16%);
+  --color-desa-blue-dark: hsl(237, 90%, 8%);
   --color-soft-red: hsl(14, 88%, 65%);
   --color-soft-violet: hsl(273, 75%, 66%);
   --color-soft-blue: hsl(240, 73%, 65%);
@@ -18,9 +18,22 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 75%;
+}
+@media (min-width: 90em) {
+  html {
+    font-size: 85%;
+  }
+}
+@media (max-width: 23.438em) {
+  html {
+    font-size: 65%;
+  }
+}
+
 body {
   font-family: "Kumbh Sans", sans-serif;
-  font-size: 75%;
   min-height: 100vh;
   display: grid;
   place-items: center;
@@ -52,17 +65,33 @@ p {
   height: 14em;
   filter: drop-shadow(0 1em 1em rgba(0, 0, 0, 0.25));
 }
+@media (max-width: 23.438em) {
+  .box {
+    transform: translate(68%, -33%);
+    width: 7em;
+    height: 7em;
+  }
+}
 
 .card {
   position: relative;
   height: 40em;
-  width: 75em;
+  width: 50vw;
   background-color: var(--color-light);
   border-radius: var(--br);
   box-shadow: 0em 2em 2em rgba(0, 0, 0, 0.25);
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
+}
+@media (max-width: 23.438em) {
+  .card {
+    min-height: 70vh;
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+  }
 }
 .card .left {
   display: flex;
@@ -75,34 +104,52 @@ p {
   background-repeat: no-repeat;
   background-position: 105% 67%;
 }
+@media (max-width: 23.438em) {
+  .card .left {
+    background: none;
+    transform: translate(0);
+    display: block;
+    height: 7em;
+  }
+}
 .card .left img {
   max-width: 100%;
   transform: translateX(-2em);
 }
+@media (max-width: 23.438em) {
+  .card .left img {
+    width: 65%;
+    transform: translate(25%, -55%);
+  }
+}
 .card .right {
   padding: 4.4em;
 }
-.card .right h1 {
-  font-size: 1.85rem;
+.card .right .title h1 {
+  font-size: 3rem;
   font-weight: 700;
   color: var(--color-desa-blue-dark);
+}
+@media (max-width: 23.438em) {
+  .card .right .title {
+    text-align: center;
+  }
 }
 .card .right ul {
   line-height: 4.4;
   list-style: none;
 }
-.card .right li {
-  font-size: 0.85rem;
-}
 .card .right ul li {
   display: flex;
   justify-content: space-between;
 }
-.card .right .question {
-  transition: all 200ms;
-}
-.card .right .question:hover {
-  color: var(--color-soft-red);
+@media (min-width: 90em) {
+  .card .right .question {
+    transition: all 200ms;
+  }
+  .card .right .question:hover {
+    color: var(--color-soft-red);
+  }
 }
 .card .right .question .answer {
   line-height: normal;
@@ -124,10 +171,10 @@ p {
   font-weight: normal;
   height: 2em;
   opacity: 1;
+  margin-bottom: 2em;
 }
 .card .question__checkbox:checked ~ .question__button .q-container .question .answer p {
   color: var(--color-dark-grayish-blue);
-  font-size: 0.75rem;
 }
 .card .question__checkbox:checked ~ .question__button .q-container .icon {
   position: absolute;
