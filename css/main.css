@@ -38,6 +38,10 @@ p {
   position: relative;
 }
 
+.q-container {
+  display: flex;
+}
+
 .box {
   position: absolute;
   top: 0;
@@ -107,19 +111,19 @@ p {
 .card .right .question__checkbox {
   display: none;
 }
-.card .question__checkbox:checked ~ .question {
+.card .question__checkbox:checked ~ .question__button > .q-container {
   font-weight: bold;
 }
-.card .question__checkbox:checked ~ .question > .answer {
+.card .question__checkbox:checked ~ .question__button > .q-container > .question > .answer {
   font-weight: normal;
   height: 2em;
   opacity: 1;
 }
-.card .question__checkbox:checked ~ .question > .answer p {
+.card .question__checkbox:checked ~ .question__button > .q-container > .question > .answer p {
   color: var(--color-dark-grayish-blue);
   font-size: 0.75rem;
 }
-.card .question__checkbox:checked ~ .question__button > .icon {
+.card .question__checkbox:checked ~ .question__button > .q-container > .icon {
   position: absolute;
   top: 0;
   right: 0;
