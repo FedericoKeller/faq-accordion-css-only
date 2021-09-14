@@ -107,6 +107,11 @@ p {
         }
 
         .question {
+            transition: all 200ms;
+
+            &:hover {
+                color: var(--color-soft-red);
+            }
 
             .answer {
                 line-height: normal;
@@ -126,12 +131,12 @@ p {
         }
     }
 
-    .question__checkbox:checked ~ .question__button > .q-container {
+    .question__checkbox:checked ~ .question__button .q-container {
         font-weight: bold;
     }
 
 
-    .question__checkbox:checked ~ .question__button > .q-container > .question > .answer {
+    .question__checkbox:checked ~ .question__button .q-container .question .answer {
         font-weight: normal;
         height: 2em;
         opacity: 1;
@@ -145,7 +150,7 @@ p {
 
 
 
-    .question__checkbox:checked ~ .question__button > .q-container > .icon {
+    .question__checkbox:checked ~ .question__button .q-container .icon {
         position: absolute;
         top: 0;
         right: 0;

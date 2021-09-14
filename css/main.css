@@ -98,6 +98,12 @@ p {
   display: flex;
   justify-content: space-between;
 }
+.card .right .question {
+  transition: all 200ms;
+}
+.card .right .question:hover {
+  color: var(--color-soft-red);
+}
 .card .right .question .answer {
   line-height: normal;
   height: 0;
@@ -111,19 +117,19 @@ p {
 .card .right .question__checkbox {
   display: none;
 }
-.card .question__checkbox:checked ~ .question__button > .q-container {
+.card .question__checkbox:checked ~ .question__button .q-container {
   font-weight: bold;
 }
-.card .question__checkbox:checked ~ .question__button > .q-container > .question > .answer {
+.card .question__checkbox:checked ~ .question__button .q-container .question .answer {
   font-weight: normal;
   height: 2em;
   opacity: 1;
 }
-.card .question__checkbox:checked ~ .question__button > .q-container > .question > .answer p {
+.card .question__checkbox:checked ~ .question__button .q-container .question .answer p {
   color: var(--color-dark-grayish-blue);
   font-size: 0.75rem;
 }
-.card .question__checkbox:checked ~ .question__button > .q-container > .icon {
+.card .question__checkbox:checked ~ .question__button .q-container .icon {
   position: absolute;
   top: 0;
   right: 0;
