@@ -66,6 +66,12 @@ p {
 
 .q-container {
     display: flex;
+
+    .icon {
+        transition: transform 200ms;
+    }
+
+
 }
 
 .box {
@@ -180,7 +186,7 @@ p {
                 line-height: normal;
                 height: 0;
                 opacity: 0;
-                transition: height 100ms;
+                transition: height 200ms;
             }
 
             &__button {
