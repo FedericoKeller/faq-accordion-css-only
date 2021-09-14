@@ -50,6 +50,11 @@ p {
 .container {
   position: relative;
 }
+@media (max-width: 37.5em) {
+  .container {
+    padding: 1em;
+  }
+}
 
 .q-container {
   display: flex;
@@ -67,7 +72,7 @@ p {
 }
 @media (max-width: 37.5em) {
   .box {
-    transform: translate(68%, -33%);
+    transform: translate(100%, -16%);
     width: 7em;
     height: 7em;
   }
@@ -86,8 +91,10 @@ p {
 }
 @media (max-width: 37.5em) {
   .card {
-    min-height: 70vh;
-    width: 85vw;
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
     overflow: visible;
