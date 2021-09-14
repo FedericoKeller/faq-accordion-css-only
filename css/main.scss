@@ -89,7 +89,7 @@ p {
 .card {
     position: relative;
     height: 40em;
-    width: 80em;
+    width: 70em;
     background-color: var(--color-light);
     border-radius: var(--br);
     box-shadow: 0em 2em 2em rgba(0, 0, 0, .25);
@@ -167,6 +167,7 @@ p {
             
             @include respond(big-desktop) {
                 transition: all 200ms;
+                color: var(--color-very-dark-grayish); 
 
                 &:hover {
                     color: var(--color-soft-red);
@@ -203,11 +204,7 @@ p {
         height: 2em;
         opacity: 1;
         margin-bottom: 2em;
-
-
-        p {
-            color: var(--color-dark-grayish-blue);
-        }
+        color: var(--color-dark-grayish-blue); 
     }
 
 
