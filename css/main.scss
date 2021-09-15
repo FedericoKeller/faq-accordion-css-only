@@ -192,6 +192,7 @@ p {
             &__button {
                 position: relative;
                 cursor: pointer;
+                -webkit-tap-highlight-color: transparent; 
             }
 
             &__checkbox {

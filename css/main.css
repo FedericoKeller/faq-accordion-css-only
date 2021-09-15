@@ -172,6 +172,7 @@ p {
 .card .right .question__button {
   position: relative;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 .card .right .question__checkbox {
   display: none;
